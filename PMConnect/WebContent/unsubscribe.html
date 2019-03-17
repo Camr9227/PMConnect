@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PMConnect</title>
+</head>
+<body>
+<form action="rest/unsubscribe/unsubscribed" method="POST" onsubmit="validateMyForm();">
+Enter Phone Number: <input id="msisdn" type="text" name="msisdn"/><br></br>
+<input type="submit" value="Submit"/>  
+</form>
+<script type="text/javascript">
+function validateMyForm()
+{
+	var msisdn = Document.getElementByID("msisdn");
+	
+	if(msisdn.length != 11 || msisdn.length != 13)
+    {
+		alert("validation failed false");
+    	window.history.back();
+    	return false;
+    }
+	alert("validations passed");
+    return true;
+}
+</script> 
+<button onclick="window.location.href = 'http://localhost:8080/PMConnect/subscribe.html';">Subscribe</button>
+<button onclick="window.location.href = 'http://localhost:8080/PMConnect/getsubscription.html';">Get Subscriptions</button> 
+</body>
+</html>
